@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div id="main" role="main">
+<div role="main">
 	<?php get_template_part('loop') ?>
 </div>
 			
