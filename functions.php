@@ -42,7 +42,7 @@ class Boilerplate {
 		// Only enqueue files on the public part of the page 
 		if ( ! is_admin() ) {
 
-			wp_enqueue_style( $this->theme_name . '-style', get_bloginfo( 'stylesheet_directory' ) . '/css/style.css' );
+			wp_enqueue_style( $this->theme_name . '-style', get_bloginfo( 'stylesheet_directory' ) . '/style.css' );
 
 			wp_enqueue_script( 'modernizr', get_bloginfo( 'stylesheet_directory' ) . '/js/libs/modernizr-2.6.2.min.js' );
 			wp_enqueue_script( $this->theme_name . '-plugins', get_bloginfo( 'stylesheet_directory' ) . '/js/plugins.js', array( 'jquery' ), false, true );
