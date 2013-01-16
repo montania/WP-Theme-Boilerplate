@@ -1,9 +1,9 @@
 <?php
 /**
  * Main file for the WordPress Theme
- * @author Rickard Andersson <rickard@montania.se>
+ * @author    Rickard Andersson <rickard@montania.se>
  * @copyright Montania System AB
- * @version 1.1
+ * @version   1.2
  */
 
 /**
@@ -17,8 +17,7 @@ class Boilerplate {
 	 * @var string
 	 * @since 1.0
 	 */
-	private $theme_name = "boilerplate";
-
+	private $theme_name = 'boilerplate';
 
 	/**
 	 * Will initialize the plugin function and add some hooks
@@ -27,9 +26,9 @@ class Boilerplate {
 	 */
 	function __construct() {
 
-		add_action('init', array($this, 'init_menus'));
-		add_action('init', array($this, 'init_assets'));
-		add_action('init', array($this, 'init_sidebars'));
+		add_action( 'init', array( $this, 'init_menus' ) );
+		add_action( 'init', array( $this, 'init_assets' ) );
+		add_action( 'init', array( $this, 'init_sidebars' ) );
 	}
 
 	/**
@@ -41,13 +40,16 @@ class Boilerplate {
 	function init_assets() {
 
 		// Only enqueue files on the public part of the page 
-		if ( !is_admin() ) {
+		if ( ! is_admin() ) {
 
-			wp_enqueue_style($this->theme_name . '-style', get_bloginfo( 'stylesheet_directory') . "/style.css");
+			wp_enqueue_style( $this->theme_name . '-style', get_bloginfo( 'stylesheet_directory' ) . '/css/style.css' );
 
-			wp_enqueue_script('modernizr',  get_bloginfo("stylesheet_directory") . "/js/libs/modernizr-2.5.3.min.js");
-			wp_enqueue_script($this->theme_name . '-plugins', get_bloginfo("stylesheet_directory") . "/js/plugins.js", array('jquery'), false, true);
-			wp_enqueue_script($this->theme_name . '-script', get_bloginfo("stylesheet_directory") . "/js/script.js", array('jquery', $this->theme_name . '-plugins'), false, true);
+			wp_enqueue_script( 'modernizr', get_bloginfo( 'stylesheet_directory' ) . '/js/libs/modernizr-2.6.2.min.js' );
+			wp_enqueue_script( $this->theme_name . '-plugins', get_bloginfo( 'stylesheet_directory' ) . '/js/plugins.js', array( 'jquery' ), false, true );
+			wp_enqueue_script( $this->theme_name . '-script', get_bloginfo( 'stylesheet_directory' ) . '/js/main.js', array(
+																														   'jquery',
+																														   $this->theme_name . '-plugins'
+																													  ), false, true );
 		}
 	}
 
@@ -58,7 +60,7 @@ class Boilerplate {
 	 * @since 1.0
 	 */
 	function init_menus() {
-		register_nav_menu('header', 'Huvudnavigationen');
+		register_nav_menu( 'header', 'Huvudnavigationen' );
 	}
 
 	/**
@@ -70,52 +72,54 @@ class Boilerplate {
 	function init_sidebars() {
 
 		$args = array(
-			"name" 			=> "Högerspalten",
-			"id"			=> "sidebar",
-			"description" 	=> "Till h&ouml;ger om huvudinneh&aring;llet",
-			"before_widget" => "<section>",
-			"after_widget" 	=> "</section>",
-			"before_title" 	=> '<h1>',
-			"after_title" 	=> "</h1>"
+			'name'          => 'Högerspalten',
+			'id'            => 'sidebar',
+			'description'   => 'Till h&ouml;ger om huvudinneh&aring;llet',
+			'before_widget' => '<section>',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h1>',
+			'after_title'   => '</h1>'
 		);
 
-		register_sidebar($args);
+		register_sidebar( $args );
 	}
 }
 
 new Boilerplate();
 
 /**
- * Function to get the time in "relative format", i.e. xxx seconds/minutes/hours/... ago
+ * Function to get the time in 'relative format', i.e. xxx seconds/minutes/hours/... ago
+ *
  * @param int $timestamp
+ *
  * @return string
  * @since 1.0
  */
-function relative_time ($timestamp) {
+function relative_time( $timestamp ) {
 
-	if (!is_numeric($timestamp)) {
+	if ( ! is_numeric( $timestamp ) ) {
 		return '';
 	}
 
 	$difference = time() - $timestamp;
-	$periods = array("sec", "min", "hour", "day", "week","month", "year", "decade");
+	$periods    = array( 'sec', 'min', 'hour', 'day', 'week', 'month', 'year', 'decade' );
 
-	$lengths = array("60","60","24","7","4.35","12","10");
+	$lengths = array( '60', '60', '24', '7', '4.35', '12', '10' );
 
-	if ($difference > 0) { // this was in the past
-		$ending = "ago";
+	if ( $difference > 0 ) { // this was in the past
+		$ending = 'ago';
 	} else { // this was in the future
-		$difference = -$difference;
-		$ending = "to go";
+		$difference = - $difference;
+		$ending     = 'to go';
 	}
 
-	for($j = 0; $difference >= $lengths[$j]; $j++)
-		$difference /= $lengths[$j];
+	for ( $j = 0; $difference >= $lengths[ $j ]; $j ++ )
+		$difference /= $lengths[ $j ];
 
-	$difference = round($difference);
+	$difference = round( $difference );
 
-	if($difference != 1)
-		$periods[$j] .= "s";
+	if ( $difference != 1 )
+		$periods[ $j ] .= 's';
 
 	$text = "$difference $periods[$j] $ending";
 
@@ -124,37 +128,39 @@ function relative_time ($timestamp) {
 
 /**
  * Function to get the time in "relative format", i.e. xxx seconds/minutes/hours/... ago
+ *
  * @param int $timestamp
+ *
  * @return string
  * @since 1.0
  */
-function relative_time_sv ($timestamp) {
+function relative_time_sv( $timestamp ) {
 
-	if (!is_numeric($timestamp)) {
+	if ( ! is_numeric( $timestamp ) ) {
 		return '';
 	}
 
 	$difference = time() - $timestamp;
-	$period = array("sekund", "minut", "timme", "dag", "vecka", "m�nad", "år", "decennium");
-	$periods = array("sekunder", "minuter", "timmar", "dagar", "veckor", "månader", "år", "decennium");
+	$period     = array( 'sekund', 'minut', 'timme', 'dag', 'vecka', 'm&ring;nad', '&ring;r', 'decennium' );
+	$periods    = array( 'sekunder', 'minuter', 'timmar', 'dagar', 'veckor', 'm&ring;nader', '&ring;r', 'decennium' );
 
-	$lengths = array("60","60","24","7","4.35","12","10");
-	$ending = $beginning = "";
+	$lengths = array( '60', '60', '24', '7', '4.35', '12', '10' );
+	$ending  = $beginning = '';
 
-	if ($difference > 0) { // this was in the past
-		$ending = "sedan";
-		$beginning = "för";
+	if ( $difference > 0 ) { // this was in the past
+		$ending    = 'sedan';
+		$beginning = 'för';
 	} else { // this was in the future
-		$difference = -$difference;
-		$beginning = "om";
+		$difference = - $difference;
+		$beginning  = 'om';
 	}
 
-	for($j = 0; $difference >= $lengths[$j]; $j++)
-		$difference /= $lengths[$j];
+	for ( $j = 0; $difference >= $lengths[ $j ]; $j ++ )
+		$difference /= $lengths[ $j ];
 
-	$difference = round($difference);
+	$difference = round( $difference );
 
-	$unit = ($difference == 1) ? $period[$j] : $periods[$j];
+	$unit = ( $difference == 1 ) ? $period[ $j ] : $periods[ $j ];
 
 	$text = "$beginning $difference $unit $ending";
 
