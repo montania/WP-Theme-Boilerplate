@@ -1,0 +1,77 @@
+@mixin background-gradient($start, $end) {
+	background-color: $start;
+	background-image: -webkit-gradient(linear, left top, left bottom, from($start), to($end));
+	background-image: -webkit-linear-gradient(top, $start, $end);
+	background-image: -moz-linear-gradient(top, $start, $end);
+	background-image: -ms-linear-gradient(top, $start, $end);
+	background-image: -o-linear-gradient(top, $start, $end);
+	background-image: linear-gradient(to bottom, $start, $end);
+}
+
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+	-moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+}
+
+@mixin border-top-radius($radius) {
+	-webkit-border-top-left-radius: $radius;
+	-webkit-border-top-right-radius: $radius;
+	-moz-border-radius-topleft: $radius;
+	-moz-border-radius-topright: $radius;
+	border-top-left-radius: $radius;
+	border-top-right-radius: $radius;
+}
+
+@mixin box-shadow($length, $color) {
+	-webkit-box-shadow: $length $color;
+	box-shadow: $length $color;
+}
+
+@mixin transition($properties, $delay, $easing) {
+	-webkit-transition: $properties $delay $easing;
+	-moz-transition: $properties $delay $easing;
+	-ms-transition: $properties $delay $easing;
+	-o-transition: $properties $delay $easing;
+	transition: $properties $delay $easing;
+}
+
+@mixin box-sizing($value) {
+	-webkit-box-sizing: $value;
+	-moz-box-sizing: $value;
+	box-sizing: $value;
+}
+
+@mixin clearfix() {
+	&:before, &:after { content: ""; display: table; }
+	&:after { clear: both; }
+	*zoom: 1;
+}
+
+@mixin arrow-down($size, $color) {
+	content: "";
+	display: block;
+	position: relative;
+	width: 0;
+	height: 0;
+	border-left: $size solid transparent;
+	border-right: $size solid transparent;
+	border-top: $size solid $color;
+}
+
+@mixin column-count($value) {
+	-o-column-count: $value;
+	-ms-column-count: $value;
+	-moz-column-count: $value;
+	-webkit-column-count: $value;
+	column-count: $value;
+}
+
+@mixin column-width($value) {
+	-o-column-width: $value;
+	-ms-column-width: $value;
+	-moz-column-width: $value;
+	-webkit-column-width: $value;
+	column-width: $value;
+}
