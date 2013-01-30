@@ -10,7 +10,7 @@ License URI: http://www.montania.se/
 Tags: montania, html5, boilerplate
 */
 
-@import 'mixins.scss';
-@import 'normalize.scss';
-@import 'h5bp.scss';
-@import 'wordpress.scss';
+@import 'scss/mixins';
+@import 'scss/normalize';
+@import 'scss/h5bp';
+@import 'scss/wordpress';
