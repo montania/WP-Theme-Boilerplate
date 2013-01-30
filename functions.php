@@ -85,6 +85,8 @@ class Boilerplate {
 
 new Boilerplate();
 
+require 'class/opengraph.php';
+
 /**
  * Function to get the time in "relative format", i.e. xxx seconds/minutes/hours/... ago
  * @param int $timestamp
