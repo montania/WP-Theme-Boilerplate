@@ -15,19 +15,20 @@
 
     <meta name="viewport" content="width=device-width">
 
-    <link rel="shortcut icon" href="<?php bloginfo( "template_directory" ) ?>/images/favicon.png" type="image/x-icon">
-    <link rel="apple-touch-icon" href="<?php bloginfo( "template_directory" ) ?>/images/apple-touch-icon.png" type="image/png">
-    <link rel="apple-touch-icon" sizes="72x72" href="<?php bloginfo( "template_directory" ) ?>/images/apple-touch-icon-72x72.png" type="image/png">
-    <link rel="apple-touch-icon" sizes="114x114" href="<?php bloginfo( "template_directory" ) ?>/images/apple-touch-icon-114x114.png" type="image/png">
+    <link rel="shortcut icon" href="<?php bloginfo( "template_directory" ) ?>/img/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="<?php bloginfo( "template_directory" ) ?>/img/apple-touch-icon.png" type="image/png">
+    <link rel="apple-touch-icon" sizes="72x72" href="<?php bloginfo( "template_directory" ) ?>/img/apple-touch-icon-72x72.png" type="image/png">
+    <link rel="apple-touch-icon" sizes="114x114" href="<?php bloginfo( "template_directory" ) ?>/img/apple-touch-icon-114x114.png" type="image/png">
+    <link rel="apple-touch-icon" sizes="144x144" href="<?php bloginfo( "template_directory" ) ?>/img/apple-touch-icon-144x144.png" type="image/png">
 
     <meta property="og:description" content="<?php bloginfo( "description" ) ?>">
     <meta property="og:locale" content="<?php echo str_replace( "-", "_", get_bloginfo( 'language' ) ) ?>">
     <meta property="og:site_name" content="<?php bloginfo( 'name' ); ?>">
     <meta property="og:title" content="<?php wp_title( '&laquo;', true, 'right' ); ?> <?php bloginfo( 'name' ); ?>">
     <meta property="og:type" content="<?php echo is_home() || is_front_page() ? "website" : "article" ?>">
-    <meta property="og:image" content="<?php bloginfo( "template_directory" ) ?>/images/apple-touch-icon-114x114.png">
-    <meta property="og:image:width" content="114">
-    <meta property="og:image:height" content="114">
+    <meta property="og:image" content="<?php bloginfo( "template_directory" ) ?>/img/apple-touch-icon-144x144.png">
+    <meta property="og:image:width" content="144">
+    <meta property="og:image:height" content="144">
     <meta property="og:url" content="http<?php if ( isset( $_SERVER[ 'HTTPS' ] ) && $_SERVER[ 'HTTPS' ] == "on" ) echo 's' ?>://<?php echo $_SERVER[ "SERVER_NAME" ] . $_SERVER[ 'REQUEST_URI' ] ?>">
     <meta property="fb:admins" content=""> <?php //todo: changeme, use graph.facebook.com/username or /userid  ?>
 
