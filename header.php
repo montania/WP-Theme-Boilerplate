@@ -21,15 +21,15 @@
     <link rel="apple-touch-icon" sizes="114x114" href="<?php bloginfo( "template_directory" ) ?>/img/apple-touch-icon-114x114.png" type="image/png">
     <link rel="apple-touch-icon" sizes="144x144" href="<?php bloginfo( "template_directory" ) ?>/img/apple-touch-icon-144x144.png" type="image/png">
 
-    <meta property="og:description" content="<?php bloginfo( "description" ) ?>">
-    <meta property="og:locale" content="<?php echo str_replace( "-", "_", get_bloginfo( 'language' ) ) ?>">
-    <meta property="og:site_name" content="<?php bloginfo( 'name' ); ?>">
-    <meta property="og:title" content="<?php wp_title( '&laquo;', true, 'right' ); ?> <?php bloginfo( 'name' ); ?>">
-    <meta property="og:type" content="<?php echo is_home() || is_front_page() ? "website" : "article" ?>">
-    <meta property="og:image" content="<?php bloginfo( "template_directory" ) ?>/img/apple-touch-icon-144x144.png">
-    <meta property="og:image:width" content="144">
-    <meta property="og:image:height" content="144">
-    <meta property="og:url" content="http<?php if ( isset( $_SERVER[ 'HTTPS' ] ) && $_SERVER[ 'HTTPS' ] == "on" ) echo 's' ?>://<?php echo $_SERVER[ "SERVER_NAME" ] . $_SERVER[ 'REQUEST_URI' ] ?>">
+    <meta property="og:description" content="<?php OpenGraph::description() ?>">
+    <meta property="og:locale" content="<?php OpenGraph::locale() ?>">
+    <meta property="og:site_name" content="<?php OpenGraph::site_name() ?>">
+    <meta property="og:title" content="<?php OpenGraph::title() ?>">
+    <meta property="og:type" content="<?php OpenGraph::type() ?>">
+    <meta property="og:image" content="<?php OpenGraph::image() ?>">
+    <meta property="og:image:width" content="<?php OpenGraph::image_width() ?>">
+    <meta property="og:image:height" content="<?php OpenGraph::image_height() ?>">
+    <meta property="og:url" content="<?php OpenGraph::url() ?>">
     <meta property="fb:admins" content=""> <?php //todo: changeme, use graph.facebook.com/username or /userid  ?>
 
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">

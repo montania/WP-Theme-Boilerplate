@@ -39,8 +39,8 @@ class Boilerplate {
 	 */
 	function init_assets() {
 
-		// Only enqueue files on the public part of the page 
-		if ( ! is_admin() ) {
+		// Only enqueue files on the public part of the page
+		if ( !is_admin() && !is_login_page() ) {
 
 			wp_enqueue_style( $this->theme_name . '-style', get_bloginfo( 'stylesheet_directory' ) . '/style.css' );
 
@@ -83,6 +83,8 @@ class Boilerplate {
 }
 
 new Boilerplate();
+
+require 'class/opengraph.php';
 
 /**
  * Function to get the time in 'relative format', i.e. xxx seconds/minutes/hours/... ago
@@ -162,4 +164,12 @@ function relative_time_sv( $timestamp ) {
 	$text = "$beginning $difference $unit $ending";
 
 	return $text;
+}
+
+/**
+ * Returns true if the current page is the login page
+ * @return bool
+ */
+function is_login_page() {
+    return in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-register.php'));
 }
