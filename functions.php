@@ -100,7 +100,10 @@ function relative_time( $timestamp ) {
 		return '';
 	}
 
-	$difference = time() - $timestamp;
+    $tz         = new DateTimeZone(get_option('timezone_string'));
+    $now        = new DateTime('now', $tz);
+    $posted     = DateTime::createFromFormat('U', $timestamp, $tz);
+    $difference = strtotime($now->format('Y-m-d H:i:s')) - strtotime($posted->format('Y-m-d H:i:s'));
 	$periods    = array( 'sec', 'min', 'hour', 'day', 'week', 'month', 'year', 'decade' );
 
 	$lengths = array( '60', '60', '24', '7', '4.35', '12', '10' );
@@ -139,7 +142,10 @@ function relative_time_sv( $timestamp ) {
 		return '';
 	}
 
-	$difference = time() - $timestamp;
+    $tz         = new DateTimeZone(get_option('timezone_string'));
+    $now        = new DateTime('now', $tz);
+    $posted     = DateTime::createFromFormat('U', $timestamp, $tz);
+    $difference = strtotime($now->format('Y-m-d H:i:s')) - strtotime($posted->format('Y-m-d H:i:s'));
 	$period     = array( 'sekund', 'minut', 'timme', 'dag', 'vecka', 'm&ring;nad', '&ring;r', 'decennium' );
 	$periods    = array( 'sekunder', 'minuter', 'timmar', 'dagar', 'veckor', 'm&ring;nader', '&ring;r', 'decennium' );
 
