@@ -1,0 +1,12 @@
+{
+    "name": "boilerplate",
+    "version": "1.0.0",
+    "devDependencies": {
+        "grunt": "~0.4.1",
+        "grunt-contrib-jshint": "~0.1.1",
+        "grunt-contrib-concat": "*",
+        "grunt-contrib-uglify": "*",
+        "grunt-contrib-watch": "*",
+        "grunt-contrib-sass": "*"
+    }
+}
