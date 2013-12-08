@@ -161,8 +161,8 @@ function relative_time_sv( $timestamp ) {
     }
 
     $difference = strtotime($now->format('Y-m-d H:i:s')) - strtotime($posted->format('Y-m-d H:i:s'));
-	$period     = array( 'sekund', 'minut', 'timme', 'dag', 'vecka', 'm&ring;nad', '&ring;r', 'decennium' );
-	$periods    = array( 'sekunder', 'minuter', 'timmar', 'dagar', 'veckor', 'm&ring;nader', '&ring;r', 'decennium' );
+	$period     = array( 'sekund', 'minut', 'timme', 'dag', 'vecka', 'm&aring;nad', '&aring;r', 'decennium' );
+	$periods    = array( 'sekunder', 'minuter', 'timmar', 'dagar', 'veckor', 'm&aring;nader', '&aring;r', 'decennium' );
 
 	$lengths = array( '60', '60', '24', '7', '4.35', '12', '10' );
 	$ending  = $beginning = '';
