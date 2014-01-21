@@ -4,24 +4,24 @@
     <header>
         <h1 class="entry-title">
 
-			<?php if ( ! is_single() && ! is_page() ) : ?>
+            <?php if ( ! is_single() && ! is_page() ) : ?>
             <a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a>
 
-			<?php else : ?>
-			<?php the_title() ?>
+            <?php else : ?>
+            <?php the_title() ?>
 
-			<?php endif; ?>
+            <?php endif; ?>
         </h1>
 
-		<?php if ( is_single() || is_home() ) : ?>
+        <?php if ( is_single() || is_home() ) : ?>
         <div class="entry-meta">
-			<?php get_template_part( 'entry', 'meta' ); ?>
+            <?php get_template_part( 'entry', 'meta' ); ?>
         </div>
-		<?php endif; ?>
+        <?php endif; ?>
 
     </header>
     <div class="entry-content">
-		<?php the_content(); ?>
+        <?php the_content(); ?>
     </div>
 
 </article>

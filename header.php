@@ -34,12 +34,12 @@
 
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-	<?php wp_head(); ?>
+    <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a
-	different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a>
-	to experience this site.</p><![endif]-->
+    different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a>
+    to experience this site.</p><![endif]-->
 
 <div id="container">
     <header role="banner">
@@ -52,6 +52,6 @@
 
     </header>
 
-	<?php get_search_form() ?>
+    <?php get_search_form() ?>
 
-	<?php wp_nav_menu( array( 'container' => 'nav', 'theme_location' => 'header' ) ) ?>
+    <?php wp_nav_menu( array( 'container' => 'nav', 'theme_location' => 'header' ) ) ?>

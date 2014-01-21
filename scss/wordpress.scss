@@ -2,41 +2,49 @@
  * WordPress Required Styles
  */
 .aligncenter {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
+
 .alignleft {
-  float: left;
+    float: left;
 }
+
 .alignright {
-  float: right;
+    float: right;
 }
+
 .wp-caption {
-  text-align: center;
-  margin: 10px 0;
-  font-style: italic;
+    text-align: center;
+    margin: 10px 0;
+    font-style: italic;
 }
+
 .wp-caption img {
-  margin: 0;
-  padding: 0;
-  border: 0 none;
+    margin: 0;
+    padding: 0;
+    border: 0 none;
 }
+
 .wp-caption-dd {
-  font-size: 11px;
-  line-height: 17px;
-  padding: 0 4px 5px;
-  margin: 0;
+    font-size: 11px;
+    line-height: 17px;
+    padding: 0 4px 5px;
+    margin: 0;
 }
+
 .sticky {
-  background: #f7f7f7;
-  padding: 0 10px 10px;
+    background: #f7f7f7;
+    padding: 0 10px 10px;
 }
+
 .sticky h2 {
-  padding-top: 10px;
+    padding-top: 10px;
 }
+
 .entry-content img, .wp-caption {
-  max-width: 100%;
-  width: auto;
-  height: auto;
+    max-width: 100%;
+    width: auto;
+    height: auto;
 }
