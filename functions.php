@@ -71,9 +71,9 @@ class Boilerplate {
             'name'          => 'Högerspalten',
             'id'            => 'sidebar',
             'description'   => 'Till h&ouml;ger om huvudinneh&aring;llet',
-            'before_widget' => '<section>',
+            'before_widget' => '<section id="%1$s" class="widget %2$s">',
             'after_widget'  => '</section>',
-            'before_title'  => '<h1>',
+            'before_title'  => '<h1 class="widgettitle">',
             'after_title'   => '</h1>'
         );
 
