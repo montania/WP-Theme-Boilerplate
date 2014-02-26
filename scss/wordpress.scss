@@ -48,3 +48,9 @@
     width: auto;
     height: auto;
 }
+
+.screen-reader-text {
+    text-align: -999em;
+    font-size: 0;
+    color: transparent;
+}
