@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
-<div role="main">
+<main role="main">
     <?php get_template_part( 'loop' ) ?>
-</div>
+</main>
 
 <aside role="complementary">
     <?php dynamic_sidebar( 'sidebar' ) ?>
