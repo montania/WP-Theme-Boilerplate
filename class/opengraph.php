@@ -9,7 +9,7 @@ class OpenGraph
 
     public static function description()
     {
-        bloginfo('descrption');
+        bloginfo('description');
     }
 
     public static function locale()
