@@ -39,16 +39,30 @@ class Boilerplate {
      */
     function init_assets() {
 
+        $asset_revision=100;
+
         // Only enqueue files on the public part of the page
         if ( !is_admin() && !is_login_page() ) {
 
-            wp_enqueue_style( $this->theme_name . '-style', get_bloginfo( 'template_directory' ) . '/style.css' );
+            wp_enqueue_style($this->theme_name . '-style',
+            	get_bloginfo('template_directory') . '/style.css', array(),
+            	$asset_revision);
 
             wp_enqueue_script( 'modernizr', get_bloginfo( 'template_directory' ) . '/js/vendor/modernizr-2.6.3.min.js' );
-            //wp_enqueue_script( $this->theme_name . '-script', get_bloginfo( 'template_directory' ) . '/js/main.min.js', array( 'jquery' ), false, true );
+			// wp_enqueue_script(
+			// 	$this->theme_name . '-script',
+			// 	get_bloginfo('template_directory') . '/js/main.min.js',
+			// 	array('jquery'),
+			// 	$asset_revision,
+			// 	true
+			// );
 
-            if ( is_child_theme() ) {
-                wp_enqueue_style($this->plugin_name . '-child-style', get_bloginfo( 'stylesheet_directory' ) . '/style.css', array($this->plugin_name . '-style'));
+            if (is_child_theme()) {
+                wp_enqueue_style(
+                    $this->theme_name . '-child-style',
+                    get_bloginfo('stylesheet_directory') . '/style.css',
+                    array($this->theme_name . '-style'),
+                    $asset_revision);
             }
         }
     }
