@@ -56,10 +56,18 @@ module.exports = function (grunt) {
                 }
             }
         },
+        autoprefixer: {
+            options: {
+                browsers: ['last 2 version', '> 1%', 'Explorer 9']
+            },
+            css: {
+                src: 'style.css'
+            }
+        },
         watch: {
             sass: {
                 files: ['*.scss', '**/*.scss'],
-                tasks: ['sass']
+                tasks: ['styles']
             },
             js: {
                 files: ['js/src/*.js'],
@@ -74,7 +82,10 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-autoprefixer');
 
     // Default task.
-    grunt.registerTask('default', ['jshint', 'concat', 'uglify']);
+    grunt.registerTask('default', ['build']);
+    grunt.registerTask('styles', ['sass', 'autoprefixer']);
+    grunt.registerTask('build', ['styles', 'jshint', 'concat', 'uglify']);
 };
