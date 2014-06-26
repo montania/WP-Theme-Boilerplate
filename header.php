@@ -44,10 +44,8 @@
 <div id="container">
     <header role="banner">
         <a href="<?php bloginfo( 'url' ) ?>" rel="home">
-            <hgroup>
-                <h1><?php bloginfo( 'name' ) ?></h1>
-                <h2><?php bloginfo( 'description' ) ?></h2>
-            </hgroup>
+            <h1><?php bloginfo( 'name' ) ?></h1>
+            <h2><?php bloginfo( 'description' ) ?></h2>
         </a>
 
     </header>
