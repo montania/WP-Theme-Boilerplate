@@ -1,4 +1,8 @@
-.idea
-.sass-cache
-node_modules
-js/build
+/.idea
+/.sass-cache
+/node_modules
+/js/build
+/style.css
+/style.css.map
+/js/*.min.js
+/local.php
