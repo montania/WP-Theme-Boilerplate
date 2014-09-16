@@ -231,3 +231,17 @@ function is_login_page()
 {
     return in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-register.php'));
 }
+
+function get_excerpt_by_id($post_id, $excerpt_length = 55)
+{
+    $the_post    = get_post($post_id); //Gets post ID
+    $the_excerpt = $the_post->post_excerpt ? $the_post->post_excerpt : $the_post->post_content; //Gets post_content to be used as a basis for the excerpt
+
+    $excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
+
+    $the_excerpt = strip_tags(strip_shortcodes($the_excerpt)); //Strips tags and images
+    $the_excerpt = wp_trim_words($the_excerpt, $excerpt_length, $excerpt_more);
+    $the_excerpt = wpautop($the_excerpt);
+
+    return $the_excerpt;
+}

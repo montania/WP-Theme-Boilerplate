@@ -48,8 +48,7 @@ module.exports = function (grunt) {
         sass: {
             main: {
                 options: {
-                    style: 'compressed',
-                    sourcemap: true
+                    style: 'compressed'
                 },
                 files: {
                     'style.css': 'style.scss'
