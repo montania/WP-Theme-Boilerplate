@@ -1,4 +1,6 @@
 1. npm install
 
-2. grunt watch (during development)
+2. grunt styles; grunt watch (during development)
+
+3. add local.php with live reload code
 

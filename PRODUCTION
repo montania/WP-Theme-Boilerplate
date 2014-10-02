@@ -1,0 +1,13 @@
+In production:
+
+1. git clone repository
+
+2. npm install
+
+3. cp git-hooks-post-merge .git/hooks/post-merge
+
+4. chmod +x .git/hooks/post-merge
+
+5. grunt build
+
+Grunt will now build when you git pull
