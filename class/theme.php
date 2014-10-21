@@ -37,7 +37,7 @@ class Boilerplate
      */
     public function init_assets()
     {
-        $asset_revision = 100;
+        require dirname(__FILE__) . '/../revision.php';
 
         // Only enqueue files on the public part of the page
         if (!is_admin() && !is_login_page()) {
@@ -46,7 +46,7 @@ class Boilerplate
                 $this->theme_name . '-style',
                 get_bloginfo('template_directory') . '/style.css',
                 array(),
-                $asset_revision
+                ASSET_REVISION
             );
 
             wp_enqueue_script('modernizr', get_bloginfo('template_directory') . '/js/vendor/modernizr-2.6.3.min.js');
@@ -54,7 +54,7 @@ class Boilerplate
             // 	$this->theme_name . '-script',
             // 	get_bloginfo('template_directory') . '/js/main.min.js',
             // 	array('jquery'),
-            // 	$asset_revision,
+            // 	ASSET_REVISION,
             // 	true
             // );
 
@@ -63,7 +63,7 @@ class Boilerplate
                     $this->theme_name . '-child-style',
                     get_bloginfo('stylesheet_directory') . '/style.css',
                     array($this->theme_name . '-style'),
-                    $asset_revision
+                    ASSET_REVISION
                 );
             }
         }

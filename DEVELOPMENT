@@ -4,3 +4,4 @@
 
 3. add local.php with live reload code
 
+4. cp revision.php.dist revision.php
