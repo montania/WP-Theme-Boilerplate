@@ -4,7 +4,7 @@ In production:
 
 2. npm install
 
-3. cd .git/hooks; ln -s ../../git-hooks-post-merge
+3. cd .git/hooks; ln -s ../../git-hooks-post-merge post-merge
 
 4. chmod +x post-merge
 
