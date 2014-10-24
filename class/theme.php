@@ -46,7 +46,7 @@ class Boilerplate
                 $this->theme_name . '-style',
                 get_bloginfo('template_directory') . '/style.css',
                 array(),
-                ASSET_REVISION
+                ASSETS_VERSION
             );
 
             wp_enqueue_script('modernizr', get_bloginfo('template_directory') . '/js/vendor/modernizr-2.6.3.min.js');
@@ -54,7 +54,7 @@ class Boilerplate
             // 	$this->theme_name . '-script',
             // 	get_bloginfo('template_directory') . '/js/main.min.js',
             // 	array('jquery'),
-            // 	ASSET_REVISION,
+            // 	ASSETS_VERSION,
             // 	true
             // );
 
@@ -63,7 +63,7 @@ class Boilerplate
                     $this->theme_name . '-child-style',
                     get_bloginfo('stylesheet_directory') . '/style.css',
                     array($this->theme_name . '-style'),
-                    ASSET_REVISION
+                    ASSETS_VERSION
                 );
             }
         }
