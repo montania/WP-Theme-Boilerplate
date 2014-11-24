@@ -2,10 +2,10 @@
 
 <div role="main">
     <article>
-        <h1>Sidan kunde inte hittas</h1>
+        <h1><?php _e('Page not found') ?></h1>
 
         <div class="entry-content">
-            <p>Tyvärr kunde vi inte hitta den sida du söker</p>
+            <p><?php _e('The page you are requesting could not be found.') ?></p>
         </div>
     </article>
 </div>
