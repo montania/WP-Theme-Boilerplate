@@ -37,7 +37,13 @@ class Boilerplate
      */
     public function init_assets()
     {
-        require dirname(__FILE__) . '/../revision.php';
+        $revisionFile = dirname(__FILE__) . '/../revision.php';
+
+        if (file_exists($revisionFile)) {
+            require $revisionFile;
+        } else {
+            define('ASSETS_VERSION', 'dev');
+        }
 
         // Only enqueue files on the public part of the page
         if (!is_admin() && !is_login_page()) {
