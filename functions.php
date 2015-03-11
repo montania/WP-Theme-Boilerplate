@@ -41,15 +41,15 @@ function relative_time($timestamp)
     }
 
     $difference = strtotime($now->format('Y-m-d H:i:s')) - strtotime($posted->format('Y-m-d H:i:s'));
-    $periods    = array('sec', 'min', 'hour', 'day', 'week', 'month', 'year', 'decade');
 
     $lengths = array('60', '60', '24', '7', '4.35', '12', '10');
+    $text = '';
 
     if ($difference > 0) { // this was in the past
-        $ending = 'ago';
+        $text = __('%1$s %2$s ago', 'montania');
     } else { // this was in the future
         $difference = -$difference;
-        $ending     = 'to go';
+        $text = __('in %1$s %2$s', 'montania');
     }
 
     for ($j = 0; $difference >= $lengths[$j]; $j++) {
@@ -58,67 +58,18 @@ function relative_time($timestamp)
 
     $difference = round($difference);
 
-    if ($difference != 1) {
-        $periods[$j] .= 's';
-    }
+    $periods = array(
+        _n('second', 'seconds', $difference, 'montania'),
+        _n('minute', 'minutes', $difference, 'montania'),
+        _n('hour', 'hours', $difference, 'montania'),
+        _n('day', 'days', $difference, 'montania'),
+        _n('week', 'weeks', $difference, 'montania'),
+        _n('month', 'months', $difference, 'montania'),
+        _n('year', 'years', $difference, 'montania'),
+        _n('decade', 'decades', $difference, 'montania')
+    );
 
-    $text = "$difference $periods[$j] $ending";
-
-    return $text;
-}
-
-/**
- * Function to get the time in "relative format", i.e. xxx seconds/minutes/hours/... ago
- *
- * @param int $timestamp
- *
- * @return string
- * @since 1.0
- */
-function relative_time_sv($timestamp)
-{
-
-    if (!is_numeric($timestamp)) {
-        return '';
-    }
-
-    $tz_string = get_option('timezone_string');
-
-    if ($tz_string) {
-        $tz     = new DateTimeZone($tz_string);
-        $now    = new DateTime('now', $tz);
-        $posted = DateTime::createFromFormat('U', $timestamp, $tz);
-    } else {
-        $now    = new DateTime('now');
-        $posted = DateTime::createFromFormat('U', $timestamp);
-    }
-
-    $difference = strtotime($now->format('Y-m-d H:i:s')) - strtotime($posted->format('Y-m-d H:i:s'));
-    $period     = array('sekund', 'minut', 'timme', 'dag', 'vecka', 'm&aring;nad', '&aring;r', 'decennium');
-    $periods    = array('sekunder', 'minuter', 'timmar', 'dagar', 'veckor', 'm&aring;nader', '&aring;r', 'decennium');
-
-    $lengths = array('60', '60', '24', '7', '4.35', '12', '10');
-    $ending  = $beginning = '';
-
-    if ($difference > 0) { // this was in the past
-        $ending    = 'sedan';
-        $beginning = 'för';
-    } else { // this was in the future
-        $difference = -$difference;
-        $beginning  = 'om';
-    }
-
-    for ($j = 0; $difference >= $lengths[$j]; $j++) {
-        $difference /= $lengths[$j];
-    }
-
-    $difference = round($difference);
-
-    $unit = ($difference == 1) ? $period[$j] : $periods[$j];
-
-    $text = "$beginning $difference $unit $ending";
-
-    return $text;
+    return sprintf($text, $difference, $periods[$j]);
 }
 
 /**
