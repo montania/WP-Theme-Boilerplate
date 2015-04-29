@@ -26,6 +26,7 @@ class Boilerplate
         add_action('init', array($this, 'init_menus'));
         add_action('init', array($this, 'init_assets'));
         add_action('init', array($this, 'init_sidebars'));
+        add_action('wp_dashboard_setup', [$this, 'add_theme_info'] );
     }
 
     /**
@@ -107,6 +108,35 @@ class Boilerplate
         );
 
         register_sidebar($args);
+    }
+
+    /**
+     * Sets up a information panel in WP Dashboard.
+     *
+     * @return void
+     */
+    public function add_theme_info()
+    {
+        wp_add_dashboard_widget('theme-information', 'Information', [$this, 'theme_info']);
+    }
+
+    /**
+     * The content to show in the information panel.
+     *
+     * @return void
+     */
+    public function theme_info()
+    {
+        ?>
+        <b>Temat är skapat av Montania System AB</b>
+        <p>
+            <b>Användbara länkar:</b><br>
+            - <a href="http://tdh.se/bok/webbpublicering-med-wordpress/">Webbpublicering med WordPress</a><br>
+        </p>
+        <p><b>För support:</b><br>
+            Skicka e-post till <a href="mailto:wpsupport@montania.se>">wpsupport@montania.se</a><br>
+            Ring på telefon <a href="tel:035-13 68 00">035-13 68 00</a></p>
+    <?php
     }
 }
 
