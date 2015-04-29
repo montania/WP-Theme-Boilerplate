@@ -84,7 +84,7 @@ class Boilerplate
      */
     public function init_menus()
     {
-        register_nav_menu('header', 'Huvudnavigationen');
+        register_nav_menu('header', __('The main navigation', 'montania')); // Huvudnavigationen
     }
 
     /**
@@ -97,9 +97,9 @@ class Boilerplate
     public function init_sidebars()
     {
         $args = array(
-            'name'          => 'Högerspalten',
+            'name'          => __('The right column', 'montania'), // Högerspalten
             'id'            => 'sidebar',
-            'description'   => 'Till h&ouml;ger om huvudinneh&aring;llet',
+            'description'   => __('To the right of the main content', 'montania'), // Till höger om huvudinnehållet
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
             'after_widget'  => '</section>',
             'before_title'  => '<h1 class="widgettitle">',
