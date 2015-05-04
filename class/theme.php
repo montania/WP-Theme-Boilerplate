@@ -1,4 +1,4 @@
-<?php
+<?php if(!defined('ABSPATH')) die();
 
 /**
  * Main class for the WordPress Theme

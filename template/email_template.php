@@ -1,4 +1,4 @@
-<?php
+<?php if(!defined('ABSPATH')) die();
 /**
  * @var string $subject
  * @var string $content

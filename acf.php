@@ -1,4 +1,4 @@
-<?php
+<?php if(!defined('ABSPATH')) die();
 
 /**
  * Returns a filed translation options array.
