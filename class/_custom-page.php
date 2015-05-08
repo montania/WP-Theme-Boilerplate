@@ -23,7 +23,7 @@ class CustomPage
 
     public function init_rewrite()
     {
-        add_rewrite_rule('^' . $this->url . '/?$', 'index.php?' . $this->tag . '=1', 'top');
+        add_rewrite_rule($this->url . '/?$', 'index.php?' . $this->tag . '=1', 'top');
         add_rewrite_tag('%' . $this->tag . '%', '1');
     }
 
