@@ -72,6 +72,14 @@ module.exports = function (grunt) {
                 files: ['js/src/*.js'],
                 tasks: ['concat', 'uglify']
             }
+        },
+        browserSync: {
+            bsFiles: {
+                src: ['style.css', 'js/main.js', 'js/main.min.js']
+            },
+            options: {
+                proxy: "wp.dev"
+            }
         }
     });
 
@@ -82,9 +90,11 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-autoprefixer');
+    grunt.loadNpmTasks('grunt-browser-sync');
 
     // Default task.
     grunt.registerTask('default', ['build']);
     grunt.registerTask('styles', ['sass', 'autoprefixer']);
     grunt.registerTask('build', ['styles', 'jshint', 'concat', 'uglify']);
+    grunt.registerTask('bs', ['browserSync']);
 };
