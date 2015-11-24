@@ -92,14 +92,27 @@
 }
 
 @mixin breakpoint($point) {
-    @if $point == papa-bear {
+    /*Ipad landscape */
+    @if $point == grandpa-bear {
+        @media (max-width: 1024px) {
+            @content
+        }
+        /*Ipad portrait */
+    } @else if $point == papa-bear {
         @media (max-width: 768px) {
             @content;
         }
+        /*Iphone 6+ landscape */
+    } @else if $point == mama-bear-plus {
+        @media (max-width: 736px){
+            @content
+        }
+        /*Phone landscape */
     } @else if $point == mama-bear {
-        @media (max-width: 600px) {
+        @media (max-width: 667px) {
             @content;
         }
+        /*Phone porttrait */
     } @else if $point == baby-bear {
         @media (max-width: 450px) {
             @content;
