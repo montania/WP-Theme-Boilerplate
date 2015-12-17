@@ -1,3 +1,5 @@
+<?php if (!defined('ABSPATH')) die(); ?>
+
             <footer>
             </footer>
         </div> <!-- #container -->

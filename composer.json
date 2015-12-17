@@ -1,0 +1,8 @@
+{
+    "name": "montania/boilerplate",
+    "description": "WordPress Theme for boilerplate",
+    "require": {},
+    "license": "Commercial",
+    "authors": [],
+    "minimum-stability": "stable"
+}

@@ -2,6 +2,6 @@
 
 2. grunt styles; grunt watch (during development)
 
-3. add local.php with live reload code
+3. add local.php with live reload code, usually:
 
-4. cp revision.php.dist revision.php
+   <script src="//localhost:35729/livereload.js"></script>

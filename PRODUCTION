@@ -4,7 +4,7 @@ In production:
 
 2. npm install
 
-3. cd .git/hooks; ln -s ../../git-hooks-post-merge
+3. cd .git/hooks; ln -s ../../git-hooks-post-merge post-merge
 
 4. chmod +x post-merge
 
@@ -12,4 +12,4 @@ In production:
 
 6. grunt build
 
-Grunt will now build when you git pull
+Grunt will now build and update ASSETS_VERSION when you git pull
