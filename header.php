@@ -13,7 +13,7 @@
     <meta name="description" content="<?php bloginfo( 'description' ) ?>">
     <meta name="author" content="<?php bloginfo( 'name' ); ?>">
 
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="shortcut icon" href="<?php bloginfo( "template_directory" ) ?>/img/favicon.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="<?php bloginfo( "template_directory" ) ?>/img/apple-touch-icon.png" type="image/png">
