@@ -120,6 +120,31 @@
     }
 }
 
+@mixin breakpoint-min($point) {
+    @if $point == grandma-bear {
+        @media (min-width: 1200px){
+            @content
+        }
+    }
+    @else if $point == grandpa-bear {
+        @media (min-width: 1025px) {
+            @content
+        }
+    } @else if $point == papa-bear {
+        @media (min-width: 769px) {
+            @content;
+        }
+    } @else if $point == mama-bear-plus {
+        @media (min-width: 737px){
+            @content
+        }
+    } @else if $point == mama-bear {
+        @media (min-width: 668px) {
+            @content;
+        }
+    }
+}
+
 @mixin three-columns() {
     width: 33%;
     float: left;
