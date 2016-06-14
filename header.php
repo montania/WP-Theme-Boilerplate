@@ -44,8 +44,7 @@
 <div id="container">
     <header role="banner">
         <a href="<?php bloginfo( 'url' ) ?>" rel="home">
-            <h1><?php bloginfo( 'name' ) ?></h1>
-            <h2><?php bloginfo( 'description' ) ?></h2>
+            <img alt="<?php echo bloginfo( 'name' ); ?>" src="">
         </a>
 
     </header>
