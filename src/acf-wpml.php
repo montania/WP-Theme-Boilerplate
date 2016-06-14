@@ -1,4 +1,7 @@
-<?php if(!defined('ABSPATH')) die();
+<?php
+namespace Montania\Boilerplate;
+
+f(!defined('ABSPATH')) die();
 
 global $wpdb;
 

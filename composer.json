@@ -4,5 +4,8 @@
     "require": {},
     "license": "Commercial",
     "authors": [],
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {"Montania\\Boilerplate\\": "src/"}
+    }
 }

@@ -1,4 +1,8 @@
-<?php if(!defined('ABSPATH')) die();
+<?php
+namespace Montania\Boilerplate;
+
+if(!defined('ABSPATH')) die();
+
 
 class OpenGraph
 {

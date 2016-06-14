@@ -10,9 +10,9 @@
 // Load acf and class files
 require 'acf.php';
 
-foreach (glob(dirname(__FILE__) . '/class/*.php') as $file) {
-    require_once $file;
-}
+
+require 'vendor/autoload.php';
+
 
 /**
  * Function to get the time in 'relative format', i.e. xxx seconds/minutes/hours/... ago
